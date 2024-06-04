@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+// routes/web.php
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserInfoController;
+use App\Http\Controllers\UserPostController;
+use App\Http\Controllers\LikeController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +22,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('users', UserController::class);
+Route::resource('user_infos', UserInfoController::class);
+Route::resource('user_posts', UserPostController::class);
+Route::resource('likes', LikeController::class);
+Route::resource('comments', CommentController::class);
